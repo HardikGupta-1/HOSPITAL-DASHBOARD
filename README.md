@@ -1,45 +1,53 @@
-Hospital Dashboard
+# Hospital Dashboard
 
-Overview
-This Power BI Hospital Dashboard provides insights into patient management, appointments, revenue, treatment costs, and departmental performance. It helps hospital management monitor operational and financial metrics through interactive visualizations.
+## Overview
+This Power BI Hospital Dashboard provides insights into patient management, appointments, revenue performance, treatment costs, and departmental analysis. The dashboard helps healthcare administrators monitor key operational and financial metrics through interactive visualizations.
 
-Key KPIs
-The dashboard uses DAX measures to calculate the following KPIs:
-1.Total Patients = COUNT(Patients[PatientID])
-2.Total Appointments = COUNT(Appointments[AppointmentID])
-3.Completed Revenue =
+## KPIs (DAX Measures)
+
+```DAX
+Total Patients = COUNT(Patients[PatientID])
+
+Total Appointments = COUNT(Appointments[AppointmentID])
+
+Completed Revenue =
 CALCULATE(
     SUM(Appointments[TreatmentCost]),
     Appointments[Status] = "Completed"
 )
-4.Average Treatment Cost =
+
+Average Treatment Cost =
 AVERAGE(Appointments[TreatmentCost])
-KPI Results
-Total Patients: 192
-Total Appointments: 600
-Completed Revenue: 2M
-Average Treatment Cost: 10.17K
+```
 
-Visualizations
-Total Patients by Department – Department-wise patient distribution.
-Total Appointments by Department – Appointment analysis across departments.
-Completed Revenue by Month – Monthly revenue trend.
-Completed Revenue by Doctor – Doctor-wise revenue contribution.
-Total Patients by Gender – Gender distribution of patients.
-Department Slicer – Interactive filtering for detailed analysis.
+### KPI Results
+- Total Patients: 192
+- Total Appointments: 600
+- Completed Revenue: 2M
+- Average Treatment Cost: 10.17K
 
-Tools Used
-Power BI Desktop
-Power Query
-DAX
-Data Modeling
+## Dashboard Visualizations
+- Total Patients by Department
+- Total Appointments by Department
+- Completed Revenue by Month
+- Completed Revenue by Doctor Name
+- Total Patients by Gender
+- Department Slicer for interactive filtering
 
-Insights
-Cardiology has the highest patient volume and appointments.
-Revenue trends vary across months.
-Doctor-wise revenue analysis highlights top contributors.
-Patient gender distribution is nearly balanced.
+## Tools & Technologies
+- Power BI Desktop
+- Power Query
+- DAX (Data Analysis Expressions)
+- Data Modeling
 
-Project: Healthcare Analytics Dashboard
-Tool: Power BI Desktop
-Domain: Healthcare Analytics
+## Key Insights
+- Cardiology has the highest number of patients and appointments.
+- Monthly revenue trends help identify peak and low-performing periods.
+- Doctor-wise revenue analysis highlights top contributors.
+- Gender distribution of patients is nearly balanced.
+- Department-level filtering enables focused analysis.
+
+## Project Information
+**Project Name:** Hospital Dashboard  
+**Domain:** Healthcare Analytics  
+**Tool:** Power BI Desktop
